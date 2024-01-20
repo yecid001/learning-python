@@ -11,3 +11,6 @@ n2= int  (input("ingrese el segundo valor: \n"))
 suma=n1+n2
 
 print("suma:", suma)
+
+
+
