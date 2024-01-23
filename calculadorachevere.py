@@ -46,6 +46,6 @@ opc = input("Digite una opción del menú: ")
 ans = calculator(n1, n2, opc)
 
 
-#if ans != None:
-print("Resultado:", ans)
+if ans != None:
+    print("Resultado:", ans)
 
