@@ -1,0 +1,10 @@
+bcrypt==4.1.2
+mysql-connector-python==8.3.0
+numpy==1.26.4
+opencv-python==4.9.0.80
+pandas==2.2.1
+psycopg2==2.9.9
+python-dateutil==2.9.0.post0
+pytz==2024.1
+six==1.16.0
+tzdata==2024.1

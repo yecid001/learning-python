@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        label {
+            margin-bottom: 0.5rem;
+        }
+        select,
+        input[type="submit"] {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+            margin-bottom: 1rem;
+        }
+        select {
+            width: 100%;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Python App</h1>
+        <form action="/" method="post">
+            <label for="option">Choose an option:</label>
+            <select name="option" id="option">
+                <option value="1">Create a new user</option>
+                <option value="2">List users</option>
+                <option value="3">Search user</option>
+                <option value="4">Update user</option>
+                <option value="5">Delete user</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
