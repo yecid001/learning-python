@@ -31,7 +31,7 @@ Persons_table='''
         ident_number VARCHAR(15) NOT NULL,
         id_exp_City INTEGER,
         address VARCHAR(150) NOT NULL,
-        mobiel VARCHAR(50) NOT NULL,
+        mobile VARCHAR(50) NOT NULL,
         id_users INTEGER,
         created_at DATETIME NOT NULL,
         updated_at DATETIME NOT NULL,

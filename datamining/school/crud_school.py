@@ -1,4 +1,4 @@
-from database import con, cur
+from school_db import con, cur
 import os
 import bcrypt
 
@@ -13,17 +13,19 @@ def create_user(op):
     os.system('clear')
 
     print("::: Signup form :::")
-    fname = input("Your firstname: ")
-    lname = input("Your lastname: ")
-    ident = input("Your ident number: ")
+    idusers = input("Your id_users: ")
     email = input("Your email: ")
     passwd = input("Your password: ")
     passwd_hashed = hash_password(passwd)
-
+    status = input("Your status: ")
+    created= input("Your created_at: ")
+    updated= input("Your updated_at ")
+    deleted= input("Your deleted_at: ")
+  
     new_user = f'''
         INSERT INTO 
-            user (firstname, latsname, ident_number, email, password) 
-            VALUES('{fname}', '{lname}', '{ident}', '{email}', "{passwd_hashed}")
+            Users ( id_users,  email, password, status, created_at,updated_at,deleted_at) 
+            VALUES('{idusers}', '{email}', "{passwd_hashed}", '{status}', '{created}', '{updated}', '{deleted}')
     '''
     con.execute(new_user)
     con.commit()
@@ -31,6 +33,50 @@ def create_user(op):
     print("::: New user has been created sucessfully :::")
     os.system('pause')
     menu()
+
+def create_student(op):
+    #Create a new user
+    os.system('clear')
+
+    print("::: Signup form :::")
+    idstuds = input("Your id_Students: ")
+    code= input("your code : ")
+    id_persons=input("your id_persons : ")
+    status = input("Your status: ")
+    created= input("Your created_at: ")
+    updated= input("Your updated_at ")
+    deleted= input("Your deleted_at: ")
+  
+    new_student = f'''
+        INSERT INTO 
+            Students ( id_Student, code, status, created_at,updated_at,deleted_at) 
+            VALUES('{idstuds}', '{code}','{status}', '{created}', '{updated}', '{deleted}')
+    '''
+    con.execute(new_student)
+    con.commit()
+
+    print("::: New user has been created sucessfully :::")
+    os.system('pause')
+    menu()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def menu():
     global opt
@@ -58,13 +104,13 @@ def menu():
         if opt == '1':
             create_user(opt)
         elif opt == '2':
-            list_users(opt)
-        elif opt == '3':
-            search_user(opt)
-        elif opt == '4':
-            update_user(opt)
-        elif opt == '5':
-            delete_user(opt)
+            create_student(opt)
+       # elif opt == '3':
+           # search_user(opt)
+        #elif opt == '4':
+          #  update_user(opt)
+        #elif opt == '5':
+         #   delete_user(opt)
         else:
             print("::: See 'u soon :::")
             exit()
