@@ -26,47 +26,27 @@ def create_country(op):
   os.system('pause')
   menu()
 
-
-
 def create_department(op):
-  """Crea un nuevo departamento."""
-
   os.system('clear')
-
-  # Pedimos al usuario que ingrese los datos
   nombre = input("Ingrese el nombre del departamento: ")
   abreviatura = input("Ingrese la abreviatura del departamento: ")
   descripcion = input("Ingrese la descripción del departamento: ")
-
-  # Obtenemos la lista de países
   cur.execute("SELECT * FROM Country")
   paises = cur.fetchall()
-
-  # Mostramos la lista de países al usuario
   print("Países disponibles:")
   for pais in paises:
     print(f"ID: {pais[0]} - Nombre: {pais[1]}")
-
-  # Pedimos al usuario que ingrese el ID del país
   id_pais = input("Ingrese el ID del país al que pertenece el departamento: ")
 
-  # Obtenemos la fecha actual formateada para MySQL
   fecha_actual = datetime.now()
 
-  # Creamos la consulta usando f-string with placeholders for data and formatted date
   nuevo_departamento = f"""
   INSERT INTO Department (name, abrev, descrip, id_country, created_at, updated_at)
   VALUES ('{nombre}', '{abreviatura}', '{descripcion}', '{id_pais}', '{fecha_actual}', '{fecha_actual}')
   """
-
-  # Ejecutamos la consulta
   cur.execute(nuevo_departamento)
-
-  # Confirmamos la inserción del departamento
   con.commit()
   print("Registro de departamento creado con éxito.")
-
-  # Pausamos la ejecución y regresamos al menú
   os.system('pause')
   menu()
 
